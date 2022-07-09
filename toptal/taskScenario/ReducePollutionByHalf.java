@@ -17,13 +17,16 @@ public class ReducePollutionByHalf {
                 .reduce(0, (a, b) -> a + b);
         double csum = 0.0;
 
-        PriorityQueue<Integer> pQueue = new PriorityQueue<>(Collections.reverseOrder());
-        pQueue.addAll(list);
+        PriorityQueue<Double> pQueue = new PriorityQueue<>(Collections.reverseOrder());
+        for(double d: list) {
+            pQueue.add((double) d);
+        }
+
         while (csum < (sum/2)) {
             count++;
-            int t = pQueue.peek();
-            csum += ((double)pQueue.poll() / 2);
-            pQueue.add(t/2);
+            double t = pQueue.peek();
+            csum += ((double)pQueue.poll() / 2.0);
+            pQueue.add(t/2.0);
         }
 
         return count;
