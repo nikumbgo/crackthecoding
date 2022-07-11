@@ -47,3 +47,13 @@ public class SortedMatrixSearch {
         return false;
     }
 }
+/**
+ *  int n = matrix[0].length;
+ *
+ *         // binary search
+ *         int left = 0, right = m * n - 1;
+ *         int pivotIdx, pivotElement;
+ *         while (left <= right) {
+ *             pivotIdx = (left + right) / 2;
+ *             pivotElement = matrix[pivotIdx / n][pivotIdx % n];
+ */
