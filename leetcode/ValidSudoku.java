@@ -159,3 +159,11 @@ public class ValidSudoku {
         return true;
     }
 }
+/**
+ * // Check the box
+ *                 int idx = (r / 3) * 3 + c / 3;
+ *                 if (boxes[idx][pos] == 1) {
+ *                     return false;
+ *                 }
+ *                 boxes[idx][pos] = 1;
+ */
