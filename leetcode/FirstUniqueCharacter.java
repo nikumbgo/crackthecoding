@@ -58,5 +58,27 @@ public class FirstUniqueCharacter {
                 return i;
         }
         return -1;
-    }*/
+    }
+	
+	Solution 3
+	public static int firstUniqChar(String s) {
+	   Map<Character, Integer> ss = new LinkedHashMap<>();
+
+        for (int i = 0; i < s.length(); i++) {
+            int index = s.charAt(i) - 'a';
+
+            ss.put(s.charAt(i), (ss.getOrDefault(s.charAt(i), 0) + 1));
+        }
+
+        Iterator<Character> ii = ss.keySet().iterator();
+        while (ii.hasNext()) {
+            char t = ii.next();
+            if (ss.get(t) == 1) {
+                return s.indexOf(t);
+            }
+        }
+
+        return -1;
+	}
+		*/
 }
